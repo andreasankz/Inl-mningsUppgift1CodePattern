@@ -32,13 +32,20 @@ namespace InlämningsUppgift1CodePattern.Animal
 
         public void RegisterDog()
         {
+            int age;
+            string input;
 
             Console.WriteLine("\n\nEnter name of Dog: ");
             var name = Console.ReadLine();
             Console.WriteLine("Enter color: ");
             var color = Console.ReadLine();
-            Console.WriteLine("Enter age: ");
-            var age = Convert.ToInt32(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("Enter age: ");
+                input = Console.ReadLine();
+            }
+            while (!int.TryParse(input, out age));
+           
             Console.WriteLine("Enter type: ");
             var typeOfDog = Console.ReadLine();
             
